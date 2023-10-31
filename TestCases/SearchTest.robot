@@ -14,11 +14,14 @@ ${user_agent}    Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like
 *** Keywords ***
 Open Chrome
     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+
     Call Method    ${chrome_options}    add_argument    --disable-extensions
     Call Method    ${chrome_options}    add_argument    --headless
     Call Method    ${chrome_options}    add_argument    --disable-gpu
     Call Method    ${chrome_options}    add_argument    --no-sandbox
+    Call Method    ${chrome_options}    add_argument    --log-level\=3
     Call Method    ${chrome_options}    add_argument    user-agent\=${user_agent}
+
     Create Webdriver    Chrome    options=${chrome_options}
 
 
@@ -34,7 +37,7 @@ Search Bar Test
     ${element_count}=    Get Element Count    css:div.vehicle-card
     ${elements}=    Get WebElements    css:a.vehicle-card-heading
 
-    IF    ${element_count} > 100   
+    IF    ${element_count} > 0   
         FOR    ${element}    IN    @{elements}
             ${element_text}=    Get Text    ${element}
             Should Contain    ${element_text}    BMW X5
