@@ -1,20 +1,9 @@
-# Echo Park Automative web test automation
+# Echo Park Test Automation
 
-## Technologies
-- Python 3.11
-    - 
-
-## Setup environment Linux
-```bash
-# Create a new virtual environment
-python3.11 -m venv automation_venv
-
-# Activate virtual environment
-source test_automation/bin/activate
-
-# Install requirements
-pip install -r requirements.txt
-```
+## Main Technologies
+- Python==3.11
+    - robotframework==6.1.1
+    - robotframework-seleniumlibrary==6.1.3
 
 ## Setup environment Windows
 ```powershell
@@ -29,4 +18,26 @@ powershell -ep bypass
 
 # Install requirements
 pip install -r requirements.txt
+```
+
+
+## Setup environment Linux
+```bash
+# Create a new virtual environment
+python3.11 -m venv automation_venv
+
+# Activate virtual environment
+source test_automation/bin/activate
+
+# Install requirements
+pip install -r requirements.txt
+```
+
+## Run tests
+```powershell
+# Windows
+robot .\TestCases\SearchTest.robot 
+
+# Linux
+robot TestCases/SearchTest.robot 
 ```
