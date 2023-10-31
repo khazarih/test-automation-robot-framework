@@ -1,11 +1,16 @@
 # Echo Park Test Automation
 
-## Main Technologies
+## Requirements
 - Python==3.11
     - robotframework==6.1.1
     - robotframework-seleniumlibrary==6.1.3
 
-<span style="color:blue">NOTE:</span> Tested on Windows
+---
+**NOTE**
+
+Tested on Windows
+
+---
 
 ## Setup environment Windows
 ```powershell
