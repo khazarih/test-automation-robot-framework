@@ -1,5 +1,12 @@
 # Echo Park Test Automation
 
+## Scenario
+```
+Given url “https://echopark.com”
+When you enter <BMW X5> in the search bar
+Then result should only contain <BMW X5>
+```
+
 ## Requirements
 - Python==3.11
     - robotframework==6.1.1
@@ -43,8 +50,8 @@ pip install -r requirements.txt
 ## Run tests
 ```powershell
 # Windows
-robot .\TestCases\SearchTest.robot 
+robot -d results .\TestCases\SearchTest.robot 
 
 # Linux
-robot TestCases/SearchTest.robot 
+robot -d results TestCases/SearchTest.robot 
 ```
